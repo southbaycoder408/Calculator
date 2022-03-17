@@ -19,6 +19,5 @@ let operate = (operator, num1,num2) =>{
     else if(operator == "/"){
         return quotient(num1,num2);
     }
-
 }
 
