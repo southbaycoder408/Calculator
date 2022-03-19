@@ -1,25 +1,30 @@
+const calcDisplay = document.createElement('div');
+document.body.appendChild(calcDisplay);
+calcDisplay.textContent = 'CALCULATOR DISPLAY';
+
 //creates div container that will hold all visible components of calculator
-const calculatorBody = document.createElement('div');
+const calcBody = document.createElement('div');
 //adds div to body tag
-document.body.appendChild(calculatorBody);
+document.body.appendChild(calcBody);
 //adds class 'container' to div
-calculatorBody.classList.add('container');
+calcBody.classList.add('calcBody');
 
-//creates button that will be number/operator keys for calculator
-// const button = document.createElement('button');
-// //adds text into the button
-// button.textContent ="PRESS ME";
-// //appends button to calulator container div
-// calculatorBody.appendChild(button);
 
-const button2 = () => {
-    const buttonNames = ["0","1","2","3","4","5","6","7","8","9","A/C","Enter","+","-","x","/"] 
+
+
+
+const createButtons = () => {
+    //array with preset labels for each button
+    const buttonNames = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A/C", "Enter", "+", "-", "x", "/", "Clear"]
     let buttons = 0;
-    for(buttons = 0; buttons <= 15; buttons++){
+    for (buttons = 0; buttons <= 16; buttons++) {
+        //creates button that will be number/operator keys for calculator
         const button = document.createElement('button');
+        //adds text into the button
         button.textContent = buttonNames[buttons];
-        calculatorBody.appendChild(button);
+        //appends button to calulator container div
+        calcBody.appendChild(button);
     }
 }
 
-button2();
+createButtons();
