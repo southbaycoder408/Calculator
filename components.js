@@ -83,14 +83,14 @@ const createButtons = () => {
 
                 calcNum2 += calcNum1;
                 let calcTotal = operate(operator,Number(calcNum1),Number(calcNum2));
-                console.log("operator: "+ operator+" calcNum1: "+calcNum1 +" calcNum2: "+calcNum2 + " calcTotal: "+ calcTotal);
+                //console.log("operator: "+ operator+" calcNum1: "+calcNum1 +" calcNum2: "+calcNum2 + " calcTotal: "+ calcTotal);
                 document.getElementById("display").innerHTML = calcTotal;
                 
             }
             else{
                 displayVal += buttonValue;
                 calcNum1 += buttonValue;
-                //console.log("Display Val: " +displayVal + " and calcNum1: "+ calcNum1);
+                console.log("Display Val: " +displayVal + " and calcNum1: "+ calcNum1);
                 document.getElementById("display").innerHTML = displayVal;
             }
         } )
