@@ -32,7 +32,7 @@ const attachButtonEvents = () => {
     //console.log(buttons);
     buttons.forEach((currentButton) => {
         //creates value that will be applied  to each button
-        
+
         let buttonText = currentButton.textContent;
 
         const buttonValue = buttonText;
@@ -48,23 +48,36 @@ const attachButtonEvents = () => {
                 subTotal += calcNum1;
                 //resets the display value and calcNum1 value
                 displayVal = "";
-                calcNum1 = "";
+                //calcNum1 = "";
 
                 document.getElementById("display").innerHTML = " + ";
                 console.log("subTotal: " + subTotal);
             } else if (buttonValue === "A/C") {
-
+                calcTotal = "";
+                calcNum1 = "";
+                calcNum2 = "";
+                displayVal = "";
+                subTotal = "";
+                operator = "";
+                document.getElementById("display").innerHTML = displayVal;
             } else if (buttonValue === "Enter") {
 
-                calcNum2 += calcNum1;
-                let calcTotal = operate(operator, Number(calcNum1), Number(calcNum2));
+                calcTotal = operate(operator, Number(calcNum1), Number(calcNum2));
                 console.log("operator: " + operator + " calcNum1: " + calcNum1 + " calcNum2: " + calcNum2 + " calcTotal: " + calcTotal);
                 document.getElementById("display").innerHTML = calcTotal;
-
-            } else {
+            }
+            //this ELSE detects number inpuits
+            else {
                 displayVal += buttonValue;
-                calcNum1 += buttonValue;
-                console.log("Display Val: " +displayVal + " and calcNum1: "+ calcNum1);
+
+                //this statement will allow value to be assigned to 2 different variables to compute output
+                if (calcNum1 != "") {
+                    calcNum2 += buttonValue;
+                } else {
+                    calcNum1 += buttonValue;
+                }
+
+                console.log("Display Val: " + displayVal + " and calcNum1: " + calcNum1 + " and calNum2: " + calcNum2);
                 document.getElementById("display").innerHTML = displayVal;
             }
         })
