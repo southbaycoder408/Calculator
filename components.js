@@ -18,9 +18,9 @@ let isOperator = (input) => {
 }
 //declare a variable that will store the computed value of calculator
 let displayVal = "";
-let calcNum1 = "";
-let calcNum2 = "";
-let subTotal = "";
+let calcNum1 = 0;
+let calcNum2 = 0;
+let subTotal = 0;
 let calcTotal = "";
 let operator = "";
 
@@ -43,27 +43,28 @@ const attachButtonEvents = () => {
                 operator += buttonValue;
 
                 //assigns the display value to subTotal variable
-                subTotal += calcNum1;
+                subTotal= operate(operator, Number(calcNum1), Number(calcNum2));
                 //resets the display value and calcNum1 value
                 displayVal = "";
-                //calcNum1 = "";
-
-                document.getElementById("display").innerHTML = " + ";
+                calcNum1 = "";
+                document.getElementById("display").innerHTML = subTotal;
                 console.log("subTotal: " + subTotal);
+
             } else if (buttonValue === "A/C") {
                 calcTotal = "";
                 calcNum1 = "";
                 calcNum2 = "";
                 displayVal = "";
-                subTotal = "";
+                subTotal = 0;
                 operator = "";
                 document.getElementById("display").innerHTML = displayVal;
-            } else if (buttonValue === "Enter") {
 
+            } else if (buttonValue === "Enter") {
                 calcTotal = operate(operator, Number(calcNum1), Number(calcNum2));
                 console.log("operator: " + operator + " calcNum1: " + calcNum1 + " calcNum2: " + calcNum2 + " calcTotal: " + calcTotal);
                 document.getElementById("display").innerHTML = calcTotal;
             }
+         
             //this ELSE detects number inpuits
             else {
                 displayVal += buttonValue;
@@ -74,7 +75,6 @@ const attachButtonEvents = () => {
                 } else {
                     calcNum1 += buttonValue;
                 }
-
                 console.log("Display Val: " + displayVal + " and calcNum1: " + calcNum1 + " and calNum2: " + calcNum2);
                 document.getElementById("display").innerHTML = displayVal;
             }
