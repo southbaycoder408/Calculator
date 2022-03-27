@@ -32,9 +32,7 @@ const attachButtonEvents = () => {
     //console.log(buttons);
     buttons.forEach((currentButton) => {
         //creates value that will be applied  to each button
-
         let buttonText = currentButton.textContent;
-
         const buttonValue = buttonText;
 
         //creates event listener function that that returns a value based on button click
@@ -81,9 +79,6 @@ const attachButtonEvents = () => {
                 document.getElementById("display").innerHTML = displayVal;
             }
         })
-
     })
-
 }
-
 attachButtonEvents();
