@@ -1,3 +1,5 @@
+"use strict"
+
 const sum = (num1, num2) => num1 + num2;
 const difference = (num1, num2) => num1 - num2;
 const product = (num1, num2) => num1 * num2;
@@ -28,7 +30,7 @@ const attachButtonEvents = () => {
 
     //Used query selector to get all buttons in DOM
     const buttons = document.querySelectorAll("button");
-    
+
     buttons.forEach((currentButton) => {
         //creates value that will be applied  to each button
         const buttonValue = currentButton.textContent;
