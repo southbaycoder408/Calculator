@@ -18,7 +18,6 @@ let isOperator = (input) => {
 }
 let updateDisplay = (value) => document.getElementById("display").innerHTML = value;
 //declare a variable that will store the computed value of calculator
-let calculatorDisplay = "";
 let userInput = "";
 let runningTotal = undefined;
 let operator = "";
@@ -39,8 +38,6 @@ const attachButtonEvents = () => {
 
             if (isOperator(buttonValue)) {
 
-
-
                 if (runningTotal) {
                     //assigns the display value to total variable
                     runningTotal = operate(operator, runningTotal, Number(userInput));
@@ -52,27 +49,22 @@ const attachButtonEvents = () => {
                     runningTotal = Number(userInput);
                 }
                 operator = buttonValue;
-                calculatorDisplay = "";
                 userInput = "";
 
-                console.log("calculatorDisplay: " + calculatorDisplay +
-                    "\nuserInput: " + userInput +
+                console.log("\nuserInput: " + userInput +
                     "\nrunningTotal: " + runningTotal +
                     "\noperator: " + operator);
 
             } else if (buttonValue === "A/C") {
                 userInput = "";
                 runningTotal = undefined;
-                calculatorDisplay = "0";
                 operator = "";
-                updateDisplay(calculatorDisplay);
-                calculatorDisplay = "";
+                updateDisplay("0");
 
             } else if (buttonValue === "Enter") {
                 runningTotal = operate(operator, Number(runningTotal), Number(userInput));
 
-                console.log("calculatorDisplay: " + calculatorDisplay +
-                    "\nuserInput: " + userInput +
+                console.log("userInput: " + userInput +
                     "\nrunningTotal: " + runningTotal +
                     "\noperator: " + operator);
 
@@ -80,11 +72,9 @@ const attachButtonEvents = () => {
             }
             //this ELSE detects number inputs
             else {
+                userInput += buttonValue;
 
-                calculatorDisplay += buttonValue;
-                userInput = calculatorDisplay;
-
-                updateDisplay(calculatorDisplay);
+                updateDisplay(userInput);
             }
         })
     })
