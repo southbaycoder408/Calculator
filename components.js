@@ -4,7 +4,7 @@ const sum = (num1, num2) => num1 + num2;
 const difference = (num1, num2) => num1 - num2;
 const product = (num1, num2) => num1 * num2;
 const quotient = (num1, num2) => {
-    if(num2 == 0){
+    if (num2 == 0) {
         return "broken.";
     } else {
         return num1 / num2;
@@ -69,17 +69,14 @@ const attachButtonEvents = () => {
                 updateDisplay("0");
 
             } else if (buttonValue === "Enter") {
-                
-                if(runningTotal){
+
+                if (runningTotal) {
                     runningTotal = operate(operator, Number(runningTotal), Number(userInput));
                     logState();
                     updateDisplay(runningTotal);
                 } else {
                     updateDisplay("0");
                 }
-                
-                
-                
             }
             //this ELSE detects number inputs
             else {
