@@ -1,4 +1,4 @@
-"use strict"
+//"use strict"
 
 const sum = (num1, num2) => num1 + num2;
 const difference = (num1, num2) => num1 - num2;
@@ -62,10 +62,17 @@ const attachButtonEvents = () => {
                 updateDisplay("0");
 
             } else if (buttonValue === "Enter") {
-                runningTotal = operate(operator, Number(runningTotal), Number(userInput));
-
-                logState();
-                updateDisplay(runningTotal);
+                
+                if(runningTotal){
+                    runningTotal = operate(operator, Number(runningTotal), Number(userInput));
+                    logState();
+                    updateDisplay(runningTotal);
+                } else {
+                    updateDisplay("0");
+                }
+                
+                
+                
             }
             //this ELSE detects number inputs
             else {
