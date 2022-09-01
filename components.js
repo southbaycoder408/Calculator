@@ -22,9 +22,11 @@ const operate = (operator, num1, num2) => {
         return quotient(num1, num2);
     }
 };
+
 const isOperator = (input) => {
     return (input == "+" || input == "-" || input == "/" || input == "*");
 }
+
 const updateDisplay = (value) => document.getElementById("display").innerHTML = value;
 
 //declare a variable that will store the computed value of calculator
@@ -41,6 +43,8 @@ const attachButtonEvents = () => {
     buttons.forEach((currentButton) => {
         //creates value that will be applied  to each button
         const buttonValue = currentButton.textContent;
+
+        let hasEnteredPeriod = 0;
 
         //creates event listener function that that returns a value based on button click
         currentButton.addEventListener("click", () => {
@@ -78,6 +82,22 @@ const attachButtonEvents = () => {
                     updateDisplay("0");
                 }
             }
+
+            else if (buttonValue === "."){
+                
+                hasEnteredPeriod++;
+
+                if (hasEnteredPeriod = 1){
+                    userInput += buttonValue;
+                    updateDisplay(userInput);
+                }
+                else{
+                    hasEnteredPeriod--;
+                }
+
+                
+            }
+
             //this ELSE detects number inputs
             else {
                 userInput += buttonValue;
