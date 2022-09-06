@@ -34,6 +34,9 @@ let userInput = operator = "";
 let runningTotal = undefined;
 const logState = () => console.log("\nuserInput: " + userInput + "\nrunningTotal: " + runningTotal + "\noperator: " + operator);
 
+
+let hasEnteredPeriod = 0;
+
 //function creates all the standard calculator buttons
 const attachButtonEvents = () => {
 
@@ -43,8 +46,6 @@ const attachButtonEvents = () => {
     buttons.forEach((currentButton) => {
         //creates value that will be applied  to each button
         const buttonValue = currentButton.textContent;
-
-        let hasEnteredPeriod = 0;
 
         //creates event listener function that that returns a value based on button click
         currentButton.addEventListener("click", () => {
@@ -91,9 +92,9 @@ const attachButtonEvents = () => {
                     userInput += buttonValue;
                     updateDisplay(userInput);
                 }
-                else{
-                    hasEnteredPeriod--;
-                }
+                // else{
+                //     hasEnteredPeriod--;
+                // }
 
                 
             }
