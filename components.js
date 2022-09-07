@@ -35,7 +35,7 @@ let runningTotal = undefined;
 const logState = () => console.log("\nuserInput: " + userInput + "\nrunningTotal: " + runningTotal + "\noperator: " + operator);
 
 
-let hasEnteredPeriod = 0;
+let hasEnteredPeriod = false;
 
 //function creates all the standard calculator buttons
 const attachButtonEvents = () => {
@@ -51,6 +51,8 @@ const attachButtonEvents = () => {
         currentButton.addEventListener("click", () => {
 
             if (isOperator(buttonValue)) {
+
+                hasEnteredPeriod = false;
 
                 if (runningTotal) {
                     //assigns the display value to total variable
@@ -68,12 +70,17 @@ const attachButtonEvents = () => {
                 logState();
 
             } else if (buttonValue === "A/C") {
+
+                hasEnteredPeriod = false;
+
                 userInput = "";
                 runningTotal = undefined;
                 operator = "";
                 updateDisplay("0");
 
             } else if (buttonValue === "Enter") {
+
+                hasEnteredPeriod = false;
 
                 if (runningTotal) {
                     runningTotal = operate(operator, Number(runningTotal), Number(userInput));
@@ -85,17 +92,17 @@ const attachButtonEvents = () => {
             }
 
             else if (buttonValue === "."){
-                
-                hasEnteredPeriod++;
 
-                if (hasEnteredPeriod = 1){
+                if (hasEnteredPeriod == false){ 
+                    
+                    hasEnteredPeriod = true;
                     userInput += buttonValue;
                     updateDisplay(userInput);
                 }
-                // else{
-                //     hasEnteredPeriod--;
-                // }
+                // else if (hasEnteredPeriod == true){
 
+                //    hasEnteredPeriod = false;
+                // }          
                 
             }
 
