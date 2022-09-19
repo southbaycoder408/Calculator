@@ -1,0 +1,15 @@
+#display {
+   border: 1px solid black;
+
+}
+
+.calcBody {
+   border: 1px solid black;
+   display: flex;
+}
+
+.button {
+   border: 1px solid black;
+   height: 100px;
+
+}
