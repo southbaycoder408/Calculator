@@ -78,7 +78,7 @@ const attachButtonEvents = () => {
                 operator = "";
                 updateDisplay("0");
 
-            } else if (buttonValue === "Enter") {
+            } else if (buttonValue === "=") {
 
                 hasEnteredPeriod = false;
 
