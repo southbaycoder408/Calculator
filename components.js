@@ -85,7 +85,7 @@ const attachButtonEvents = () => {
                 if (runningTotal) {
                     runningTotal = operate(operator, Number(runningTotal), Number(userInput));
                     logState();
-                    updateDisplay(runningTotal);
+                    updateDisplay(runningTotal.toFixed(2));
                 } else {
                     updateDisplay("0");
                 }
