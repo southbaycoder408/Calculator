@@ -34,7 +34,7 @@ let userInput = operator = "";
 let runningTotal = undefined;
 const logState = () => console.log("\nuserInput: " + userInput + "\nrunningTotal: " + runningTotal + "\noperator: " + operator);
 
-
+// this allows me to prevent multiple decimal/periods to show up in display or in calculation
 let hasEnteredPeriod = false;
 
 //function creates all the standard calculator buttons

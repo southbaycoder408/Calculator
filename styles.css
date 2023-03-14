@@ -1,20 +1,18 @@
-body {
-   border: 5px red;
-  /* display: flex;
-   flex-direction: column;
-   /*justify-content: center;*/
-  /* align-content: center;*/
+.container {
+   border: 5px solid red; 
+   display: flex;
+   flex-direction:column;
+   align-items: center;
 }
+
 
 #display {
    border: 1px solid black;
-   display: flex;
-   gap: 5px 5px;
    height: 100px;
    width: 400px;
-   align-self: flex-end;
-
 }
+
+
 
 .calcBody {
    border: 1px solid black;
@@ -24,9 +22,8 @@ body {
 }
 
 .button {
+   vertical-align: top;
    border: 1px solid black;
-   height: 100px;
-   display: flex;
-   width: 100px;
-
+   height: 97px;
+   width: 97px;
 }
