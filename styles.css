@@ -1,6 +1,6 @@
 body  {   
    /* this border is used to see the border of the body which contains the display class and body that holds the calculator buttons*/
-   border: 5px solid red; 
+   /*border: 5px solid red; */
    
    /* allows for body to be centered on webpage */
    display: flex;
@@ -17,13 +17,13 @@ body  {
 #display {
    text-align: right;
    border: 5px solid black;
-   font-size: 80px;
+   font-size: 50px;
    font-style: italic;
-   /*height: 100px;*/
    width: 380px;
-   padding-top: 10px;
-   padding-bottom: 10px;
+   padding-top: 25px;
+   padding-bottom: 25px;
    padding-right: 20px;
+   overflow: hidden;
 }
 
 

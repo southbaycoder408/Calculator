@@ -85,7 +85,9 @@ const attachButtonEvents = () => {
                 if (runningTotal) {
                     runningTotal = operate(operator, Number(runningTotal), Number(userInput));
                     logState();
-                    updateDisplay(runningTotal.toFixed(2));
+
+                    //will update display of calculator and invoke runningTotal function to 2 decimal points to prevent long floating numers
+                    updateDisplay(runningTotal.toFixed(3));
                 } else {
                     updateDisplay("0");
                 }
