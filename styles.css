@@ -1,29 +1,59 @@
-.container {
+body  {   
+   /* this border is used to see the border of the body which contains the display class and body that holds the calculator buttons*/
    border: 5px solid red; 
+   
+   /* allows for body to be centered on webpage */
    display: flex;
-   flex-direction:column;
+   justify-content: center;
    align-items: center;
+}
+
+.container {
+   /* this is the main border around the completed calculator */
+   border: 10px solid grey; 
 }
 
 
 #display {
-   border: 1px solid black;
-   height: 100px;
-   width: 400px;
+   text-align: right;
+   border: 5px solid black;
+   font-size: 80px;
+   font-style: italic;
+   /*height: 100px;*/
+   width: 380px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-right: 20px;
 }
 
 
 
 .calcBody {
-   border: 1px solid black;
-   display: flex;
+   border: 5px solid black;
    gap: 5px 5px;
    width: 400px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0px;
+   
 }
 
 .button {
    vertical-align: top;
-   border: 1px solid black;
+   margin: 0px;
+   border: 5px solid goldenrod;
+   font-size: 25px;
+   font-style:oblique;
+
    height: 97px;
-   width: 97px;
+   width: 100px;
+}
+
+/* both blocks of code below targets a button and their unique ID from INDEX HTML to lengthen their respective buttons and fit into the CALC BODY */
+.button#ac {
+   width: 300px;
+}
+
+.button#equals {
+   width: 200px;
 }
